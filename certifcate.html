@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Certification Details</title>
+    <link rel="stylesheet" href="details.css" />
+  </head>
+  <body>
+    <form action="search.php" role="search" method="post">
+      <input type="text" name="search" placeholder="Search" required />
+      <input type="submit" name="submit" value="Search" />
+      <input
+                type="button"
+                class="submit"
+                value="Cancel"
+                id="clear"
+                width="50%"
+              />
+    </form>
+
+    <div class="container">
+      <h1>CERTIFICATION DETAILS</h1>
+      <form
+        name="detais"
+        id="sub"
+        class="Certification-details"
+        action="insert.php"
+        method="post"
+        onsubmit="return fi()"
+      >
+        <table width="100%">
+          <tr>
+            <td><label for="name">Employee Name:</label></td>
+            <td>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Employee name"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="CSP">CSP : </label>
+              <select id="drop" name="drop">
+                <option selected hidden value="">Select CSP</option>
+                <option value="AWS">AWS</option>
+                <option value="Azure">Azure</option>
+                <option value="GCP">GCP</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="name">Certification Level:</label></td>
+            <td>
+              <input type="text" name="ct_level" id="ct_level" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="name">Certification Name:</label></td>
+            <td><input type="text" name="ct_name" id="ct_name" /></td>
+          </tr>
+          <tr>
+            <td><label>Certification Id :</label></td>
+            <td>
+              <input
+                type="text"
+                name="ct_id"
+                id="ct_id"
+                class="field"
+                pattern="[a-zA-Z0-9]+"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="Date">Date Of Certification :</label></td>
+            <td>
+              <input type="Date" name="date" id="date" size="100px" />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="Date">Expiry Date Of Certification :</label></td>
+            <td>
+              <input type="Date" name="exp_date" id="exp_date" />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="Validity">Validity :</label></td>
+            <td>
+              <input type="number" name="Validity" id="Validity" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="Image">Certification Image :</label></td>
+            <td>
+              <input
+                type="file"
+                name="image"
+                id="image"
+                accept="image/*"
+                src=""
+              />
+            </td>
+          </tr>
+          <tr>
+          <td>
+              <input
+                type="button"
+                id="upload"
+                class="upload"
+                value="Upload"
+                width="50%"
+              />
+            </td>
+            <td>
+              <input
+                type="submit"
+                class="submit"
+                id="submit"
+                value="Submit"
+                width="50%"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">
+              <input
+                type="button"
+                id="logout"
+                class="logout"
+                value="Logout"
+                width="50%"
+              />
+            </th>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <script>
+      const cancel = document.getElementById("clear");
+      cancel.addEventListener("click", () => {
+        document.getElementById("name").value = "";
+        document.getElementById("drop").value = "";
+        document.getElementById("ct_level").value = "";
+        document.getElementById("ct_name").value = "";
+        document.getElementById("ct_id").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("exp_date").value = "";
+        document.getElementById("Validity").value = "";
+      });
+    </script>
+    <script type="module" src="certificate.js"></script>
+    <script src="date_set.js"></script>
+  </body>
+</html>
